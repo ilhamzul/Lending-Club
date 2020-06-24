@@ -1,0 +1,68 @@
+data abnormality,
+- 0 income lead to infinite number of dti
+- dti outlier, dti > 100 ? it's unreasonable.
+- annual_inc outlier,
+
+----------------------------------
+- recoverie outlier, but it is possible to occure in the real world. but if you want to avoid homoscedasticity, just delete the outlier. recoveries > 10000
+- how come there are data with total_rec_prncp = 0 total_rec_prncp = 0 recoveries = 0, but the dataset gave the loan condition? it's magic!
+
+if there is a borrower who cancelled their listing or request for COP or FER, it's not fair some of them got bad credit scoring and the rest of them got good condition?
+- total_pymnt and total_rec_prncp and recoveries are variables within the loan period. Normally, we don't have those values when the client applied loan. but it's possible to have those values from previous loan.
+
+-----------------------------------
+data impact (subjective selection)
+-----------------------------------
+- emp_length_int
+- home_ownership_cat
+- annual_inc
+- loan_amount
+- term
+- application_type_cat
+- purpose_cat
+- interes_rate
+- installment
+- dti
+- region
+
+
+
+------------------------------------
+====== Presentation Scenario =======
+------------------------------------
+- Introduction to P2P Lending Company         done
+- Assumption the P2P Lending Process          improvement
+- Milestone
+--- Company Growth                            done
+--- Lender across the ireland island          improvement
+--- Bad Vs Good Loan Ratio                    done
+- Data Insight
+--- Employement Length                        Done
+--- Annual Income                             Done
+--- Loan Amount                               Done
+--- Home Ownership                            Done
+--- Application Type                          DONE
+--- Purpose                                   Done
+--- Interest Rate                             DONE                             
+--- Grade                                     DONE
+--- Debt to Income Ratio                      DONE
+--- Region                                    Deprecated
+- Drop Unrelated Feature (Total payment, Total received principle, Installment, Recoveries)
+- Delete row with weird value
+- Collinearity
+--- Correlation
+--- VIF Factor
+- One Hot Encoding
+- Split Dataset
+--- MainData
+--- OOTB
+--- OOTA
+- Main Data Processing
+--- Train, Val, and Test split
+--- Train Oversampling
+Making Model
+--- Introduction to The Plan
+--- Level-0
+--- Level-1
+Evaluation
+--- Why AUC?
